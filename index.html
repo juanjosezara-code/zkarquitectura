@@ -56,6 +56,56 @@
       .navbar nav { display: none; }
       .hamburger { display: flex; }
     }
+
+    /* HERO */
+    .hero {
+      display: flex; min-height: 100vh; padding-top: 85px;
+    }
+    .hero-left {
+      flex: 0 0 45%; background: #1a1a1a;
+      display: flex; flex-direction: column; justify-content: center;
+      padding: 80px 60px; color: #fff;
+    }
+    .hero-left h1 {
+      font-family: 'Oswald', sans-serif; font-weight: 700;
+      font-size: clamp(50px, 6vw, 85px); line-height: 1; text-transform: uppercase;
+    }
+    .hero-left h1 .accent {
+      font-family: 'Playfair Display', serif; font-style: italic; color: #2471C0;
+    }
+    .hero-left .divider { width: 50px; height: 3px; background: #2471C0; margin: 30px 0; }
+    .hero-left p { font-size: 16px; color: #888; line-height: 1.6; margin-bottom: 35px; }
+    .hero-buttons { display: flex; align-items: center; gap: 25px; margin-bottom: 50px; }
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 16px 35px; background: #2471C0; color: #fff;
+      font-family: 'Oswald', sans-serif; font-size: 12px;
+      letter-spacing: 3px; text-transform: uppercase; transition: background 0.3s;
+    }
+    .btn-primary:hover { background: #1a5ca0; }
+    .btn-secondary {
+      font-family: 'Oswald', sans-serif; font-size: 12px;
+      letter-spacing: 3px; text-transform: uppercase; color: #888; transition: color 0.3s;
+    }
+    .btn-secondary:hover { color: #fff; }
+    .hero-stats { display: flex; gap: 40px; }
+    .hero-stats .stat h3 {
+      font-family: 'Oswald', sans-serif; font-size: 55px; font-weight: 700; color: #fff;
+    }
+    .hero-stats .stat h3 .dot { color: #2471C0; }
+    .hero-stats .stat span {
+      font-family: 'Oswald', sans-serif; font-size: 10px;
+      letter-spacing: 3px; text-transform: uppercase; color: #666;
+    }
+    .hero-right {
+      flex: 1;
+      background: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1400') center/cover no-repeat;
+    }
+    @media (max-width: 768px) {
+      .hero { flex-direction: column; }
+      .hero-left { flex: none; padding: 60px 30px; }
+      .hero-right { min-height: 50vh; }
+    }
   </style>
 </head>
 <body>
@@ -81,6 +131,30 @@
     <a href="#nosotros" onclick="closeMobileMenu()">Nosotros</a>
     <a href="#contacto" onclick="closeMobileMenu()">Contacto</a>
   </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-left">
+      <h1>DISEÑO.<br>OBRA.<br><span class="accent">LLAVE.</span></h1>
+      <div class="divider"></div>
+      <p>Del concepto a la construcción, sin intermediarios.<br>Arquitectura y construcción en un solo equipo.</p>
+      <div class="hero-buttons">
+        <a href="#contacto" class="btn-primary">COTIZAR PROYECTO →</a>
+        <a href="#portafolio" class="btn-secondary">VER PROYECTOS</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <h3>+15<span class="dot">.</span></h3>
+          <span>AÑOS DE EXPERIENCIA</span>
+        </div>
+        <div class="stat">
+          <h3>+30<span class="dot">.</span></h3>
+          <span>PROYECTOS EJECUTADOS</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-right"></div>
+  </section>
 
   <script>
     const hamburger = document.getElementById('hamburger');
