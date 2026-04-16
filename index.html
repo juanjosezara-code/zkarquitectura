@@ -106,6 +106,234 @@
       .hero-left { flex: none; padding: 60px 30px; }
       .hero-right { min-height: 50vh; }
     }
+
+/* SERVICES BAR */
+.services-bar {
+  display: flex; align-items: center; justify-content: center;
+  gap: 30px; padding: 25px 50px; background: #2471C0; color: #fff; flex-wrap: wrap;
+}
+.services-bar span {
+  font-family: 'Oswald', sans-serif; font-size: 12px; letter-spacing: 3px; text-transform: uppercase;
+}
+.services-bar .sep { width: 6px; height: 6px; background: rgba(255,255,255,0.4); border-radius: 50%; }
+
+/* PORTFOLIO */
+.portfolio { padding: 80px 50px; }
+.section-header {
+  display: flex; justify-content: space-between; align-items: flex-end;
+  margin-bottom: 15px; border-bottom: 2px solid #2471C0; padding-bottom: 20px;
+}
+.section-header h2 {
+  font-family: 'Oswald', sans-serif; font-size: clamp(36px, 4vw, 55px);
+  font-weight: 700; text-transform: uppercase; line-height: 1;
+}
+.section-header h2 .accent {
+  font-family: 'Playfair Display', serif; font-style: italic; color: #2471C0; font-weight: 700;
+}
+.section-subtitle { color: #888; font-size: 15px; margin-bottom: 30px; }
+.portfolio-filters { display: flex; gap: 10px; margin-bottom: 35px; flex-wrap: wrap; }
+.filter-btn {
+  font-family: 'Oswald', sans-serif; font-size: 11px; letter-spacing: 2px;
+  text-transform: uppercase; padding: 10px 22px;
+  border: 1px solid #ddd; background: #fff; color: #999;
+  cursor: pointer; transition: all 0.3s;
+}
+.filter-btn:hover, .filter-btn.active { background: #2471C0; color: #fff; border-color: #2471C0; }
+.portfolio-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.portfolio-item {
+  position: relative; overflow: hidden; aspect-ratio: 1; cursor: pointer;
+  transition: opacity 0.4s;
+}
+.portfolio-item.hidden { display: none; }
+.portfolio-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+.portfolio-item:hover img { transform: scale(1.05); }
+.portfolio-item .overlay {
+  position: absolute; bottom: 0; left: 0; right: 0; padding: 25px;
+  background: linear-gradient(transparent, rgba(0,0,0,0.75));
+  color: #fff; opacity: 0; transition: opacity 0.4s;
+}
+.portfolio-item:hover .overlay { opacity: 1; }
+.overlay .tag {
+  font-family: 'Oswald', sans-serif; font-size: 10px;
+  letter-spacing: 3px; text-transform: uppercase; color: #2471C0; margin-bottom: 6px;
+}
+.overlay h3 { font-family: 'Oswald', sans-serif; font-size: 20px; font-weight: 700; text-transform: uppercase; }
+.overlay h3 .accent { font-family: 'Playfair Display', serif; font-style: italic; }
+.overlay .location { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #aaa; margin-top: 4px; }
+.lightbox {
+  display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.92); z-index: 2000;
+  align-items: center; justify-content: center; padding: 20px;
+}
+.lightbox.open { display: flex; }
+.lightbox-content { position: relative; max-width: 900px; width: 100%; }
+.lightbox-content img { width: 100%; max-height: 80vh; object-fit: contain; }
+.lightbox-info { padding: 20px 0; color: #fff; }
+.lightbox-info .tag {
+  font-family: 'Oswald', sans-serif; font-size: 11px;
+  letter-spacing: 3px; text-transform: uppercase; color: #2471C0; margin-bottom: 8px;
+}
+.lightbox-info h3 { font-family: 'Oswald', sans-serif; font-size: 28px; text-transform: uppercase; }
+.lightbox-close {
+  position: absolute; top: -40px; right: 0;
+  font-family: 'Oswald', sans-serif; font-size: 13px; letter-spacing: 3px;
+  text-transform: uppercase; color: #888; cursor: pointer; transition: color 0.3s;
+}
+.lightbox-close:hover { color: #fff; }
+
+/* PROCESS */
+.process { background: #1a1a1a; padding: 80px 50px; color: #fff; }
+.process .section-header { border-bottom-color: #2471C0; }
+.process .section-header h2 { color: #fff; }
+.process-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin-top: 50px; }
+.process-item .number {
+  font-family: 'Oswald', sans-serif; font-size: 70px; font-weight: 700;
+  color: rgba(255,255,255,0.06); line-height: 1;
+}
+.process-item h3 {
+  font-family: 'Playfair Display', serif; font-style: italic;
+  font-size: 26px; color: #2471C0; margin-bottom: 15px;
+}
+.process-item p { font-size: 14px; color: #888; line-height: 1.8; }
+
+/* STATS */
+.stats-section {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  text-align: center; padding: 70px 50px; background: #f5f5f5;
+}
+.stats-section .stat-box h3 {
+  font-family: 'Oswald', sans-serif; font-size: 65px; font-weight: 700; color: #1a1a1a;
+}
+.stats-section .stat-box h3 .dot { color: #2471C0; }
+.stats-section .stat-box span {
+  font-family: 'Oswald', sans-serif; font-size: 11px;
+  letter-spacing: 3px; text-transform: uppercase; color: #999;
+}
+
+/* TESTIMONIOS */
+.testimonios { padding: 80px 50px; background: #fff; }
+.testimonios-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 50px; }
+.testimonio-card { background: #f5f5f5; padding: 35px 30px; border-top: 3px solid #2471C0; }
+.testimonio-card .stars { color: #2471C0; font-size: 16px; margin-bottom: 20px; letter-spacing: 3px; }
+.testimonio-card p { font-size: 15px; color: #555; line-height: 1.8; margin-bottom: 25px; font-style: italic; }
+.testimonio-card .autor { font-family: 'Oswald', sans-serif; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: #333; }
+.testimonio-card .autor span { display: block; color: #999; font-size: 11px; margin-top: 3px; }
+
+/* ABOUT */
+.about { display: flex; min-height: 70vh; }
+.about-image {
+  flex: 0 0 50%;
+  background: url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200') center/cover no-repeat;
+}
+.about-content {
+  flex: 1; background: #1a1a1a; color: #fff;
+  display: flex; flex-direction: column; justify-content: center; padding: 80px 60px;
+}
+.about-content .label {
+  font-family: 'Oswald', sans-serif; font-size: 11px;
+  letter-spacing: 4px; text-transform: uppercase; color: #555; margin-bottom: 30px;
+}
+.about-content h2 {
+  font-family: 'Oswald', sans-serif; font-size: clamp(36px, 4vw, 55px);
+  font-weight: 700; text-transform: uppercase; line-height: 1.1; margin-bottom: 30px;
+}
+.about-content h2 .accent { font-family: 'Playfair Display', serif; font-style: italic; color: #2471C0; }
+.about-content p { font-size: 15px; color: #888; line-height: 1.8; }
+
+/* CTA / CONTACTO */
+.cta { text-align: center; padding: 100px 50px; background: #f5f5f5; }
+.cta .small-text {
+  font-family: 'Oswald', sans-serif; font-size: 11px;
+  letter-spacing: 4px; text-transform: uppercase; color: #999; margin-bottom: 30px;
+}
+.cta h2 {
+  font-family: 'Oswald', sans-serif; font-size: clamp(36px, 5vw, 70px);
+  font-weight: 700; text-transform: uppercase; line-height: 1.1; margin-bottom: 50px;
+}
+.cta h2 .accent { font-family: 'Playfair Display', serif; font-style: italic; color: #2471C0; }
+.contact-form { max-width: 600px; margin: 0 auto; text-align: left; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 15px; }
+.form-group { display: flex; flex-direction: column; gap: 8px; margin-bottom: 15px; }
+.form-group label {
+  font-family: 'Oswald', sans-serif; font-size: 11px;
+  letter-spacing: 2px; text-transform: uppercase; color: #666;
+}
+.form-group input, .form-group textarea {
+  padding: 14px 16px; border: 1px solid #ddd; background: #fff;
+  font-family: 'Inter', sans-serif; font-size: 14px; color: #333;
+  outline: none; transition: border-color 0.3s;
+}
+.form-group input:focus, .form-group textarea:focus { border-color: #2471C0; }
+.form-group textarea { resize: vertical; min-height: 130px; }
+.btn-submit {
+  width: 100%; padding: 18px; background: #2471C0; color: #fff;
+  font-family: 'Oswald', sans-serif; font-size: 13px; letter-spacing: 3px;
+  text-transform: uppercase; border: none; cursor: pointer; transition: background 0.3s;
+  margin-top: 10px;
+}
+.btn-submit:hover { background: #1a5ca0; }
+.whatsapp-cta {
+  display: inline-flex; align-items: center; gap: 12px;
+  margin-top: 30px; padding: 16px 35px;
+  background: #25d366; color: #fff;
+  font-family: 'Oswald', sans-serif; font-size: 12px;
+  letter-spacing: 3px; text-transform: uppercase; transition: background 0.3s;
+}
+.whatsapp-cta:hover { background: #1da851; }
+.contact-divider {
+  text-align: center; margin: 25px 0;
+  font-family: 'Oswald', sans-serif; font-size: 11px;
+  letter-spacing: 3px; text-transform: uppercase; color: #bbb;
+}
+
+/* FOOTER */
+.footer { background: #1a1a1a; padding: 50px; color: #888; }
+.footer-inner {
+  display: flex; justify-content: space-between; align-items: center;
+  padding-bottom: 30px; border-bottom: 1px solid rgba(255,255,255,0.08); margin-bottom: 25px;
+  flex-wrap: wrap; gap: 30px;
+}
+.footer .footer-logo img { height: 45px; width: auto; filter: brightness(0) invert(1); }
+.footer nav { display: flex; gap: 35px; flex-wrap: wrap; }
+.footer nav a {
+  font-family: 'Oswald', sans-serif; font-size: 12px;
+  letter-spacing: 3px; text-transform: uppercase; color: #666; transition: color 0.3s;
+}
+.footer nav a:hover { color: #2471C0; }
+.footer .contact-info { text-align: right; font-size: 13px; line-height: 1.9; }
+.footer .contact-info a { color: #2471C0; }
+.footer .copyright { font-size: 11px; letter-spacing: 1px; color: #444; }
+
+/* WHATSAPP FLOTANTE */
+.whatsapp-btn {
+  position: fixed; bottom: 30px; right: 30px;
+  width: 60px; height: 60px; background: #25d366; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 4px 20px rgba(37,211,102,0.4); z-index: 999; transition: transform 0.3s;
+}
+.whatsapp-btn:hover { transform: scale(1.1); }
+.whatsapp-btn svg { width: 30px; height: 30px; fill: #fff; }
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .portfolio { padding: 50px 20px; }
+  .portfolio-grid { grid-template-columns: 1fr; }
+  .services-bar { gap: 15px; padding: 20px; }
+  .services-bar .sep { display: none; }
+  .process { padding: 50px 20px; }
+  .process-grid { grid-template-columns: 1fr; }
+  .stats-section { grid-template-columns: 1fr; gap: 40px; padding: 50px 20px; }
+  .testimonios { padding: 50px 20px; }
+  .testimonios-grid { grid-template-columns: 1fr; }
+  .about { flex-direction: column; }
+  .about-image { min-height: 50vh; flex: none; }
+  .about-content { padding: 50px 30px; }
+  .cta { padding: 60px 20px; }
+  .form-row { grid-template-columns: 1fr; }
+  .footer { padding: 30px 20px; }
+  .footer-inner { flex-direction: column; align-items: flex-start; }
+  .footer .contact-info { text-align: left; }
+}
   </style>
 </head>
 <body>
@@ -156,17 +384,244 @@
     <div class="hero-right"></div>
   </section>
 
-  <script>
-    const hamburger = document.getElementById('hamburger');
-    const mobileMenu = document.getElementById('mobileMenu');
-    hamburger.addEventListener('click', () => {
-      mobileMenu.classList.toggle('open');
-      hamburger.setAttribute('aria-expanded', mobileMenu.classList.contains('open').toString());
+
+<!-- SERVICES BAR -->
+<div class="services-bar" id="servicios">
+  <span>Remodelaciones</span>
+  <div class="sep"></div>
+  <span>Quinchos &amp; Terrazas</span>
+  <div class="sep"></div>
+  <span>Locales Comerciales</span>
+  <div class="sep"></div>
+  <span>Llave en Mano</span>
+</div>
+
+<!-- PORTFOLIO -->
+<section class="portfolio" id="portafolio">
+  <div class="section-header">
+    <h2>OBRA <span class="accent">EJECUTADA</span></h2>
+  </div>
+  <p class="section-subtitle">Proyectos diseñados y construidos por nuestro equipo.</p>
+  <div class="portfolio-filters">
+    <button class="filter-btn active" data-filter="all">TODOS</button>
+    <button class="filter-btn" data-filter="remodelacion">REMODELACIONES</button>
+    <button class="filter-btn" data-filter="quincho">QUINCHOS &amp; TERRAZAS</button>
+    <button class="filter-btn" data-filter="comercial">LOCALES COMERCIALES</button>
+  </div>
+  <div class="portfolio-grid">
+    <div class="portfolio-item" data-category="remodelacion" data-title="CASA MODERNA" data-tag="Remodelación" data-location="Santiago" data-img="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=900">
+      <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600" alt="Casa Moderna">
+      <div class="overlay"><div class="tag">Remodelación</div><h3>CASA <span class="accent">Moderna</span></h3><div class="location">Santiago</div></div>
+    </div>
+    <div class="portfolio-item" data-category="quincho" data-title="QUINCHO PREMIUM" data-tag="Quincho & Terraza" data-location="Las Condes" data-img="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=900">
+      <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=600" alt="Quincho Premium">
+      <div class="overlay"><div class="tag">Quincho &amp; Terraza</div><h3>QUINCHO <span class="accent">Premium</span></h3><div class="location">Las Condes</div></div>
+    </div>
+    <div class="portfolio-item" data-category="comercial" data-title="LOCAL GOURMET" data-tag="Local Comercial" data-location="Vitacura" data-img="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=900">
+      <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=600" alt="Local Gourmet">
+      <div class="overlay"><div class="tag">Local Comercial</div><h3>LOCAL <span class="accent">Gourmet</span></h3><div class="location">Vitacura</div></div>
+    </div>
+    <div class="portfolio-item" data-category="remodelacion" data-title="LIVING DESIGN" data-tag="Remodelación" data-location="Providencia" data-img="https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=900">
+      <img src="https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=600" alt="Living Design">
+      <div class="overlay"><div class="tag">Remodelación</div><h3>LIVING <span class="accent">Design</span></h3><div class="location">Providencia</div></div>
+    </div>
+    <div class="portfolio-item" data-category="quincho" data-title="TERRAZA BOSQUE" data-tag="Quincho & Terraza" data-location="Lo Barnechea" data-img="https://images.unsplash.com/photo-1600573472550-8090b5e0745e?w=900">
+      <img src="https://images.unsplash.com/photo-1600573472550-8090b5e0745e?w=600" alt="Terraza Bosque">
+      <div class="overlay"><div class="tag">Quincho &amp; Terraza</div><h3>TERRAZA <span class="accent">Bosque</span></h3><div class="location">Lo Barnechea</div></div>
+    </div>
+    <div class="portfolio-item" data-category="comercial" data-title="OFICINA CORPORATIVA" data-tag="Local Comercial" data-location="Ñuñoa" data-img="https://images.unsplash.com/photo-1497366216548-37526070297c?w=900">
+      <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600" alt="Oficina Corporativa">
+      <div class="overlay"><div class="tag">Local Comercial</div><h3>OFICINA <span class="accent">Corporativa</span></h3><div class="location">Ñuñoa</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <div class="lightbox-content">
+    <div class="lightbox-close" id="lightboxClose">✕ CERRAR</div>
+    <img id="lightboxImg" src="" alt="">
+    <div class="lightbox-info">
+      <div class="tag" id="lightboxTag"></div>
+      <h3 id="lightboxTitle"></h3>
+    </div>
+  </div>
+</div>
+
+<!-- PROCESS -->
+<section class="process">
+  <div class="section-header">
+    <h2>NUESTRO <span class="accent">PROCESO</span></h2>
+  </div>
+  <div class="process-grid">
+    <div class="process-item"><div class="number">01</div><h3>Consultoría</h3><p>Analizamos tu terreno, necesidades y presupuesto para definir el proyecto ideal antes de comenzar.</p></div>
+    <div class="process-item"><div class="number">02</div><h3>Diseño</h3><p>Desarrollamos planos detallados y renders 3D para que veas el resultado antes de construir.</p></div>
+    <div class="process-item"><div class="number">03</div><h3>Construcción</h3><p>Ejecutamos la obra con control técnico y seguimiento constante. Entregamos llave en mano.</p></div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats-section">
+  <div class="stat-box"><h3 data-target="15" data-prefix="+">+15<span class="dot">.</span></h3><span>AÑOS DE EXPERIENCIA</span></div>
+  <div class="stat-box"><h3 data-target="30" data-prefix="+">+30<span class="dot">.</span></h3><span>PROYECTOS EJECUTADOS</span></div>
+  <div class="stat-box"><h3 data-target="3" data-prefix="">3<span class="dot">.</span></h3><span>ESPECIALIDADES</span></div>
+</section>
+
+<!-- TESTIMONIOS -->
+<section class="testimonios">
+  <div class="section-header">
+    <h2>LO QUE DICEN <span class="accent">NUESTROS CLIENTES</span></h2>
+  </div>
+  <div class="testimonios-grid">
+    <div class="testimonio-card"><div class="stars">★★★★★</div><p>"ZK transformó completamente nuestra casa. El proceso fue ordenado, transparente y el resultado superó nuestras expectativas."</p><div class="autor">Familia Rodríguez<span>Remodelación — Las Condes</span></div></div>
+    <div class="testimonio-card"><div class="stars">★★★★★</div><p>"Construyeron nuestro quincho llave en mano. En todo momento supimos el estado de la obra. Increíble resultado."</p><div class="autor">Cristián Morales<span>Quincho — Lo Barnechea</span></div></div>
+    <div class="testimonio-card"><div class="stars">★★★★★</div><p>"Habilitaron nuestro local comercial a tiempo y dentro del presupuesto. Los recomiendo sin dudarlo."</p><div class="autor">Valentina Torres<span>Local Comercial — Providencia</span></div></div>
+  </div>
+</section>
+
+<!-- NOSOTROS -->
+<section class="about" id="nosotros">
+  <div class="about-image"></div>
+  <div class="about-content">
+    <div class="label">ZK — ARQUITECTURA Y CONSTRUCCIÓN</div>
+    <h2>UN SOLO<br><span class="accent">EQUIPO</span><br>PARA TODO<br>EL PROYECTO.</h2>
+    <p>Somos un estudio de arquitectura y constructora que trabaja proyectos completos, desde el diseño hasta la entrega final. Con más de 15 años de experiencia, nuestro objetivo es eliminar los sobrecostos y las decisiones improvisadas.</p>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section class="cta" id="contacto">
+  <p class="small-text">¿TIENES UN PROYECTO EN MENTE?</p>
+  <h2>COTIZA CON<br><span class="accent">QUIENES LO</span><br>EJECUTAN.</h2>
+  <form class="contact-form" action="mailto:juanjose@zkarquitectura.cl" method="post" enctype="text/plain">
+    <div class="form-row">
+      <div class="form-group"><label>Nombre</label><input type="text" name="nombre" placeholder="Tu nombre" required></div>
+      <div class="form-group"><label>Teléfono</label><input type="tel" name="telefono" placeholder="+56 9 1234 5678"></div>
+    </div>
+    <div class="form-group"><label>Email</label><input type="email" name="email" placeholder="tu@email.cl" required></div>
+    <div class="form-group"><label>Mensaje</label><textarea name="mensaje" placeholder="Cuéntanos sobre tu proyecto..."></textarea></div>
+    <button type="submit" class="btn-submit">ENVIAR MENSAJE →</button>
+  </form>
+  <div class="contact-divider">— O ESCRÍBENOS DIRECTAMENTE —</div>
+  <a href="https://wa.me/56966167206?text=Hola%20ZK%2C%20me%20interesa%20cotizar%20un%20proyecto" class="whatsapp-cta" target="_blank">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    ESCRIBIR POR WHATSAPP
+  </a>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-logo"><img src="logo-zk.png" alt="ZK Arquitectura"></div>
+    <nav>
+      <a href="#portafolio">Portafolio</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <div class="contact-info">
+      <a href="mailto:juanjose@zkarquitectura.cl">juanjose@zkarquitectura.cl</a><br>
+      <a href="https://wa.me/56966167206">+56 9 6616 7206</a><br>
+      Santiago, Chile
+    </div>
+  </div>
+  <p class="copyright">© 2026 ZK Arquitectura y Construcción — Todos los derechos reservados</p>
+</footer>
+
+<!-- WHATSAPP FLOTANTE -->
+<a href="https://wa.me/56966167206?text=Hola%20ZK%2C%20me%20interesa%20cotizar%20un%20proyecto" class="whatsapp-btn" target="_blank" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+  // Hamburger menu
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  hamburger.addEventListener('click', () => {
+    mobileMenu.classList.toggle('open');
+    hamburger.setAttribute('aria-expanded', mobileMenu.classList.contains('open').toString());
+  });
+  function closeMobileMenu() {
+    mobileMenu.classList.remove('open');
+    hamburger.setAttribute('aria-expanded', 'false');
+  }
+
+  // Portfolio filters
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter = btn.dataset.filter;
+      document.querySelectorAll('.portfolio-item').forEach(item => {
+        if (filter === 'all' || item.dataset.category === filter) {
+          item.classList.remove('hidden');
+        } else {
+          item.classList.add('hidden');
+        }
+      });
     });
-    function closeMobileMenu() {
-      mobileMenu.classList.remove('open');
-      hamburger.setAttribute('aria-expanded', 'false');
+  });
+
+  // Lightbox
+  const lightbox = document.getElementById('lightbox');
+  document.querySelectorAll('.portfolio-item').forEach(item => {
+    item.addEventListener('click', () => {
+      document.getElementById('lightboxImg').src = item.dataset.img;
+      document.getElementById('lightboxTitle').textContent = item.dataset.title;
+      document.getElementById('lightboxTag').textContent = item.dataset.tag;
+      lightbox.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+  document.getElementById('lightboxClose').addEventListener('click', () => {
+    lightbox.classList.remove('open');
+    document.body.style.overflow = '';
+  });
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) {
+      lightbox.classList.remove('open');
+      document.body.style.overflow = '';
     }
-  </script>
+  });
+
+  // Counter animation
+  function animateCounter(el) {
+    const target = parseInt(el.dataset.target);
+    const prefix = el.dataset.prefix || '';
+    let current = 0;
+    const increment = Math.ceil(target / 40);
+    const timer = setInterval(() => {
+      current += increment;
+      if (current >= target) { current = target; clearInterval(timer); }
+      el.innerHTML = `${prefix}${current}<span class="dot">.</span>`;
+    }, 30);
+  }
+  const statsObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.querySelectorAll('h3[data-target]').forEach(animateCounter);
+        statsObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+  document.querySelectorAll('.stats-section').forEach(el => statsObserver.observe(el));
+
+  // Scroll animations
+  const scrollObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+  document.querySelectorAll('.portfolio-item, .process-item, .stat-box, .about-content, .testimonio-card').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(30px)';
+    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    scrollObserver.observe(el);
+  });
+</script>
 </body>
 </html>
