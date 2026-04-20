@@ -153,6 +153,74 @@
       .hero-content p { max-width: 100%; }
     }
 
+/* FEATURED STRIP */
+.featured-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  height: 280px;
+  overflow: hidden;
+}
+.featured-item {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+.featured-item img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+.featured-item:hover img { transform: scale(1.05); }
+.featured-item .featured-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(36,113,192,0.82);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+.featured-item:hover .featured-overlay { opacity: 1; }
+.featured-overlay .feat-label {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.75);
+  margin-bottom: 8px;
+}
+.featured-overlay .feat-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 22px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.featured-overlay .feat-arrow {
+  font-size: 22px;
+  color: rgba(255,255,255,0.8);
+}
+@media (max-width: 768px) {
+  .featured-strip {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    height: 220px;
+    -webkit-overflow-scrolling: touch;
+  }
+  .featured-strip::-webkit-scrollbar { display: none; }
+  .featured-item {
+    min-width: 75vw;
+    scroll-snap-align: start;
+    flex-shrink: 0;
+  }
+  .featured-item .featured-overlay { opacity: 1; background: rgba(26,26,26,0.55); }
+}
+
 /* SERVICES BAR */
 .services-bar {
   display: flex; align-items: center; justify-content: center;
@@ -457,6 +525,33 @@
     </div>
   </section>
 
+<!-- FEATURED STRIP -->
+<div class="featured-strip">
+  <div class="featured-item" data-filter-target="quincho">
+    <img src="img/Quincho Lomas de la Dehesa.jpg" alt="Quincho Lomas de la Dehesa" loading="lazy">
+    <div class="featured-overlay">
+      <div class="feat-label">Quincho &amp; Terraza</div>
+      <div class="feat-title">QUINCHOS</div>
+      <div class="feat-arrow">→</div>
+    </div>
+  </div>
+  <div class="featured-item" data-filter-target="remodelacion">
+    <img src="img/Cocina_Av.Kennedy.jpg" alt="Cocina Av. Kennedy" loading="lazy">
+    <div class="featured-overlay">
+      <div class="feat-label">Remodelación</div>
+      <div class="feat-title">REMODELACIONES</div>
+      <div class="feat-arrow">→</div>
+    </div>
+  </div>
+  <div class="featured-item" data-filter-target="comercial">
+    <img src="img/Restaurant texas ribs.png" alt="Restaurant Texas Ribs" loading="lazy">
+    <div class="featured-overlay">
+      <div class="feat-label">Local Comercial</div>
+      <div class="feat-title">LOCALES COMERCIALES</div>
+      <div class="feat-arrow">→</div>
+    </div>
+  </div>
+</div>
 
 <!-- SERVICES BAR -->
 <div class="services-bar" id="servicios">
@@ -700,6 +795,18 @@
   document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
   lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && lightbox.classList.contains('open')) closeLightbox(); });
+
+  // Featured strip → activa filtro en portafolio
+  document.querySelectorAll('.featured-item').forEach(item => {
+    item.addEventListener('click', () => {
+      const target = item.dataset.filterTarget;
+      const btn = document.querySelector(`.filter-btn[data-filter="${target}"]`);
+      if (btn) {
+        btn.click();
+        document.getElementById('portafolio').scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  });
 
   // Counter animation
   function animateCounter(el) {
