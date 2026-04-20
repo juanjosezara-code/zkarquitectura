@@ -60,6 +60,7 @@
     /* HERO */
     .hero {
       position: relative;
+      min-height: 100vh;
       min-height: 100svh;
       display: flex;
       align-items: center;
@@ -110,7 +111,7 @@
       text-transform: none;
       line-height: 1.2;
     }
-    .hero-content .divider { width: 50px; height: 3px; background: #2471C0; margin: 28px 0; }
+    .hero-divider { width: 50px; height: 3px; background: #2471C0; margin: 28px 0; }
     .hero-content p {
       font-size: 16px;
       color: rgba(255,255,255,0.72);
@@ -134,12 +135,14 @@
       color: rgba(255,255,255,0.65); transition: color 0.3s;
     }
     .btn-ver-proyectos:hover { color: #fff; }
+    .btn-whatsapp-hero:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
+    .btn-ver-proyectos:focus-visible { outline: 2px solid rgba(255,255,255,0.8); outline-offset: 3px; }
     .hero-stats-bar {
       display: flex; align-items: center; gap: 20px; flex-wrap: wrap;
     }
     .hero-stats-bar span {
       font-family: 'Bebas Neue', sans-serif; font-size: 12px;
-      letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,0.45);
+      letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,0.65);
     }
     .hero-stats-bar .sep { color: #2471C0; font-size: 16px; }
     @media (max-width: 768px) {
@@ -435,7 +438,7 @@
     <div class="hero-content">
       <div class="hero-label">SANTIAGO · CHILE · DESDE 2009</div>
       <h1>TRANSFORMA<br>TU ESPACIO<br><span class="accent">sin intermediarios.</span></h1>
-      <div class="divider"></div>
+      <div class="hero-divider"></div>
       <p>Diseñamos y construimos tu proyecto completo. Remodelaciones, quinchos y locales comerciales en Santiago.</p>
       <div class="hero-buttons">
         <a href="https://wa.me/56966167206?text=Hola%20ZK%2C%20me%20interesa%20cotizar%20un%20proyecto" class="btn-whatsapp-hero" target="_blank" rel="noopener">
