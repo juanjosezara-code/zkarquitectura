@@ -81,8 +81,10 @@
       padding: 16px 35px; background: #2471C0; color: #fff;
       font-family: 'Bebas Neue', sans-serif; font-size: 12px;
       letter-spacing: 3px; text-transform: uppercase; transition: background 0.3s;
+      min-height: 44px;
     }
     .btn-primary:hover { background: #1a5ca0; }
+    .btn-primary:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
     .btn-secondary {
       font-family: 'Bebas Neue', sans-serif; font-size: 12px;
       letter-spacing: 3px; text-transform: uppercase; color: #888; transition: color 0.3s;
@@ -94,7 +96,7 @@
     }
     .hero-stats .stat h3 .dot { color: #2471C0; }
     .hero-stats .stat span {
-      font-family: 'Bebas Neue', sans-serif; font-size: 10px;
+      font-family: 'Bebas Neue', sans-serif; font-size: 12px;
       letter-spacing: 3px; text-transform: uppercase; color: #666;
     }
     .hero-right {
@@ -133,16 +135,19 @@
 .section-subtitle { color: #888; font-size: 15px; margin-bottom: 30px; }
 .portfolio-filters { display: flex; gap: 10px; margin-bottom: 35px; flex-wrap: wrap; }
 .filter-btn {
-  font-family: 'Bebas Neue', sans-serif; font-size: 11px; letter-spacing: 2px;
-  text-transform: uppercase; padding: 10px 22px;
+  font-family: 'Bebas Neue', sans-serif; font-size: 12px; letter-spacing: 2px;
+  text-transform: uppercase; padding: 12px 22px; min-height: 44px;
   border: 1px solid #ddd; background: #fff; color: #999;
   cursor: pointer; transition: all 0.3s;
+}
+.filter-btn:focus-visible {
+  outline: 2px solid #2471C0; outline-offset: 2px;
 }
 .filter-btn:hover, .filter-btn.active { background: #2471C0; color: #fff; border-color: #2471C0; }
 .portfolio-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
 .portfolio-item {
   position: relative; overflow: hidden; aspect-ratio: 1; cursor: pointer;
-  transition: opacity 0.4s;
+  transition: opacity 0.4s; border-radius: 0;
 }
 .portfolio-item.hidden { display: none; }
 .portfolio-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
@@ -154,12 +159,13 @@
 }
 .portfolio-item:hover .overlay { opacity: 1; }
 .overlay .tag {
-  font-family: 'Bebas Neue', sans-serif; font-size: 10px;
+  font-family: 'Bebas Neue', sans-serif; font-size: 12px;
   letter-spacing: 3px; text-transform: uppercase; color: #2471C0; margin-bottom: 6px;
 }
 .overlay h3 { font-family: 'Bebas Neue', sans-serif; font-size: 20px; font-weight: 700; text-transform: uppercase; }
 .overlay h3 .accent { font-family: 'Josefin Sans', sans-serif; font-style: italic; }
 .overlay .location { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #aaa; margin-top: 4px; }
+.portfolio-item:focus-visible { outline: 3px solid #2471C0; outline-offset: 2px; }
 .lightbox {
   display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
   background: rgba(0,0,0,0.92); z-index: 2000;
@@ -206,7 +212,7 @@
 }
 .stats-section .stat-box h3 .dot { color: #2471C0; }
 .stats-section .stat-box span {
-  font-family: 'Bebas Neue', sans-serif; font-size: 11px;
+  font-family: 'Bebas Neue', sans-serif; font-size: 13px;
   letter-spacing: 3px; text-transform: uppercase; color: #999;
 }
 
@@ -217,13 +223,13 @@
 .testimonio-card .stars { color: #2471C0; font-size: 16px; margin-bottom: 20px; letter-spacing: 3px; }
 .testimonio-card p { font-size: 15px; color: #555; line-height: 1.8; margin-bottom: 25px; font-style: italic; }
 .testimonio-card .autor { font-family: 'Bebas Neue', sans-serif; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: #333; }
-.testimonio-card .autor span { display: block; color: #999; font-size: 11px; margin-top: 3px; }
+.testimonio-card .autor span { display: block; color: #999; font-size: 12px; margin-top: 3px; }
 
 /* ABOUT */
 .about { background: #1a1a1a; padding: 80px 50px; color: #fff; }
 .about-intro { max-width: 700px; margin: 0 auto 60px; text-align: center; }
 .about-intro .label {
-  font-family: 'Bebas Neue', sans-serif; font-size: 11px;
+  font-family: 'Bebas Neue', sans-serif; font-size: 13px;
   letter-spacing: 4px; text-transform: uppercase; color: #555; margin-bottom: 20px;
 }
 .about-intro h2 {
@@ -263,7 +269,7 @@
 /* CTA / CONTACTO */
 .cta { text-align: center; padding: 100px 50px; background: #f5f5f5; }
 .cta .small-text {
-  font-family: 'Bebas Neue', sans-serif; font-size: 11px;
+  font-family: 'Bebas Neue', sans-serif; font-size: 13px;
   letter-spacing: 4px; text-transform: uppercase; color: #999; margin-bottom: 30px;
 }
 .cta h2 {
@@ -275,23 +281,27 @@
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 15px; }
 .form-group { display: flex; flex-direction: column; gap: 8px; margin-bottom: 15px; }
 .form-group label {
-  font-family: 'Bebas Neue', sans-serif; font-size: 11px;
+  font-family: 'Bebas Neue', sans-serif; font-size: 13px;
   letter-spacing: 2px; text-transform: uppercase; color: #666;
 }
 .form-group input, .form-group textarea {
   padding: 14px 16px; border: 1px solid #ddd; background: #fff;
   font-family: 'Inter', sans-serif; font-size: 14px; color: #333;
-  outline: none; transition: border-color 0.3s;
+  outline: none; transition: border-color 0.3s, box-shadow 0.3s;
 }
-.form-group input:focus, .form-group textarea:focus { border-color: #2471C0; }
+.form-group input:focus, .form-group textarea:focus {
+  border-color: #2471C0;
+  box-shadow: 0 0 0 3px rgba(36,113,192,0.15);
+}
 .form-group textarea { resize: vertical; min-height: 130px; }
 .btn-submit {
   width: 100%; padding: 18px; background: #2471C0; color: #fff;
   font-family: 'Bebas Neue', sans-serif; font-size: 13px; letter-spacing: 3px;
   text-transform: uppercase; border: none; cursor: pointer; transition: background 0.3s;
-  margin-top: 10px;
+  margin-top: 10px; min-height: 52px;
 }
 .btn-submit:hover { background: #1a5ca0; }
+.btn-submit:focus-visible { outline: 2px solid #2471C0; outline-offset: 3px; box-shadow: 0 0 0 4px rgba(36,113,192,0.2); }
 .whatsapp-cta {
   display: inline-flex; align-items: center; gap: 12px;
   margin-top: 30px; padding: 16px 35px;
@@ -302,7 +312,7 @@
 .whatsapp-cta:hover { background: #1da851; }
 .contact-divider {
   text-align: center; margin: 25px 0;
-  font-family: 'Bebas Neue', sans-serif; font-size: 11px;
+  font-family: 'Bebas Neue', sans-serif; font-size: 13px;
   letter-spacing: 3px; text-transform: uppercase; color: #bbb;
 }
 
@@ -316,13 +326,13 @@
 .footer .footer-logo img { height: 45px; width: auto; filter: brightness(0) invert(1); }
 .footer nav { display: flex; gap: 35px; flex-wrap: wrap; }
 .footer nav a {
-  font-family: 'Bebas Neue', sans-serif; font-size: 12px;
+  font-family: 'Bebas Neue', sans-serif; font-size: 13px;
   letter-spacing: 3px; text-transform: uppercase; color: #666; transition: color 0.3s;
 }
 .footer nav a:hover { color: #2471C0; }
 .footer .contact-info { text-align: right; font-size: 13px; line-height: 1.9; }
 .footer .contact-info a { color: #2471C0; }
-.footer .copyright { font-size: 11px; letter-spacing: 1px; color: #444; }
+.footer .copyright { font-size: 12px; letter-spacing: 1px; color: #444; }
 
 /* WHATSAPP FLOTANTE */
 .whatsapp-btn {
@@ -337,7 +347,7 @@
 /* RESPONSIVE */
 @media (max-width: 768px) {
   .portfolio { padding: 50px 20px; }
-  .portfolio-grid { grid-template-columns: 1fr; }
+  .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
   .services-bar { gap: 15px; padding: 20px; }
   .services-bar .sep { display: none; }
   .process { padding: 50px 20px; }
@@ -420,65 +430,65 @@
   </div>
   <p class="section-subtitle">Proyectos diseñados y construidos por nuestro equipo.</p>
   <div class="portfolio-filters">
-    <button class="filter-btn active" data-filter="all">TODOS</button>
-    <button class="filter-btn" data-filter="remodelacion">REMODELACIONES</button>
-    <button class="filter-btn" data-filter="quincho">QUINCHOS &amp; TERRAZAS</button>
-    <button class="filter-btn" data-filter="comercial">LOCALES COMERCIALES</button>
+    <button type="button" class="filter-btn active" data-filter="all" aria-pressed="true">TODOS</button>
+    <button type="button" class="filter-btn" data-filter="remodelacion" aria-pressed="false">REMODELACIONES</button>
+    <button type="button" class="filter-btn" data-filter="quincho" aria-pressed="false">QUINCHOS &amp; TERRAZAS</button>
+    <button type="button" class="filter-btn" data-filter="comercial" aria-pressed="false">LOCALES COMERCIALES</button>
   </div>
   <div class="portfolio-grid">
-    <div class="portfolio-item" data-category="quincho" data-title="QUINCHO AV. LAS CONDES" data-tag="Quincho & Terraza" data-location="Las Condes" data-img="img/Quincho Av. Las condes.jpg">
+    <div class="portfolio-item" tabindex="0" role="button" data-category="quincho" data-title="QUINCHO AV. LAS CONDES" data-tag="Quincho & Terraza" data-location="Las Condes" data-img="img/Quincho Av. Las condes.jpg">
       <img src="img/Quincho Av. Las condes.jpg" alt="Quincho Av. Las Condes">
       <div class="overlay"><div class="tag">Quincho &amp; Terraza</div><h3>QUINCHO <span class="accent">Las Condes</span></h3><div class="location">Av. Las Condes</div></div>
     </div>
-    <div class="portfolio-item" data-category="quincho" data-title="QUINCHO LOS ALGARROBOS" data-tag="Quincho & Terraza" data-location="Lo Barnechea" data-img="img/Quincho los Algarrobos.jpg">
+    <div class="portfolio-item" tabindex="0" role="button" data-category="quincho" data-title="QUINCHO LOS ALGARROBOS" data-tag="Quincho & Terraza" data-location="Lo Barnechea" data-img="img/Quincho los Algarrobos.jpg">
       <img src="img/Quincho los Algarrobos.jpg" alt="Quincho Los Algarrobos">
       <div class="overlay"><div class="tag">Quincho &amp; Terraza</div><h3>QUINCHO <span class="accent">Los Algarrobos</span></h3><div class="location">Lo Barnechea</div></div>
     </div>
-    <div class="portfolio-item" data-category="comercial" data-title="RESTAURANT TEXAS RIBS" data-tag="Local Comercial" data-location="Santiago" data-img="img/Restaurant texas ribs.png">
+    <div class="portfolio-item" tabindex="0" role="button" data-category="comercial" data-title="RESTAURANT TEXAS RIBS" data-tag="Local Comercial" data-location="Santiago" data-img="img/Restaurant texas ribs.png">
       <img src="img/Restaurant texas ribs.png" alt="Restaurant Texas Ribs">
       <div class="overlay"><div class="tag">Local Comercial</div><h3>TEXAS <span class="accent">Ribs</span></h3><div class="location">Santiago</div></div>
     </div>
-    <div class="portfolio-item" data-category="remodelacion" data-title="COCINA AV. KENNEDY" data-tag="Remodelación" data-location="Vitacura" data-img="img/Cocina_Av.Kennedy.jpg">
-      <img src="img/Cocina_Av.Kennedy.jpg" alt="Cocina Av. Kennedy">
+    <div class="portfolio-item" tabindex="0" role="button" data-category="remodelacion" data-title="COCINA AV. KENNEDY" data-tag="Remodelación" data-location="Vitacura" data-img="img/Cocina_Av.Kennedy.jpg">
+      <img src="img/Cocina_Av.Kennedy.jpg" alt="Cocina Av. Kennedy" loading="lazy">
       <div class="overlay"><div class="tag">Remodelación</div><h3>COCINA <span class="accent">Kennedy</span></h3><div class="location">Vitacura</div></div>
     </div>
-    <div class="portfolio-item" data-category="quincho" data-title="QUINCHO LOMA VERDE" data-tag="Quincho & Terraza" data-location="Santiago" data-img="img/Quincho Loma Verde.png">
-      <img src="img/Quincho Loma Verde.png" alt="Quincho Loma Verde">
+    <div class="portfolio-item" tabindex="0" role="button" data-category="quincho" data-title="QUINCHO LOMA VERDE" data-tag="Quincho & Terraza" data-location="Santiago" data-img="img/Quincho Loma Verde.png">
+      <img src="img/Quincho Loma Verde.png" alt="Quincho Loma Verde" loading="lazy">
       <div class="overlay"><div class="tag">Quincho &amp; Terraza</div><h3>QUINCHO <span class="accent">Loma Verde</span></h3><div class="location">Santiago</div></div>
     </div>
-    <div class="portfolio-item" data-category="comercial" data-title="CLÍNICA OXIGENOSALUD" data-tag="Local Comercial" data-location="Santiago" data-img="img/Clinica Oxigenosalud.png">
-      <img src="img/Clinica Oxigenosalud.png" alt="Clínica Oxigenosalud">
+    <div class="portfolio-item" tabindex="0" role="button" data-category="comercial" data-title="CLÍNICA OXIGENOSALUD" data-tag="Local Comercial" data-location="Santiago" data-img="img/Clinica Oxigenosalud.png">
+      <img src="img/Clinica Oxigenosalud.png" alt="Clínica Oxigenosalud" loading="lazy">
       <div class="overlay"><div class="tag">Local Comercial</div><h3>CLÍNICA <span class="accent">Oxigenosalud</span></h3><div class="location">Santiago</div></div>
     </div>
-    <div class="portfolio-item" data-category="quincho" data-title="QUINCHO VITACURA" data-tag="Quincho & Terraza" data-location="Vitacura" data-img="img/Quincho Vitacura.png">
-      <img src="img/Quincho Vitacura.png" alt="Quincho Vitacura">
+    <div class="portfolio-item" tabindex="0" role="button" data-category="quincho" data-title="QUINCHO VITACURA" data-tag="Quincho & Terraza" data-location="Vitacura" data-img="img/Quincho Vitacura.png">
+      <img src="img/Quincho Vitacura.png" alt="Quincho Vitacura" loading="lazy">
       <div class="overlay"><div class="tag">Quincho &amp; Terraza</div><h3>QUINCHO <span class="accent">Vitacura</span></h3><div class="location">Vitacura</div></div>
     </div>
-    <div class="portfolio-item" data-category="quincho" data-title="TERRAZA LA REINA" data-tag="Quincho & Terraza" data-location="La Reina" data-img="img/Terraza La Reina.png">
-      <img src="img/Terraza La Reina.png" alt="Terraza La Reina">
+    <div class="portfolio-item" tabindex="0" role="button" data-category="quincho" data-title="TERRAZA LA REINA" data-tag="Quincho & Terraza" data-location="La Reina" data-img="img/Terraza La Reina.png">
+      <img src="img/Terraza La Reina.png" alt="Terraza La Reina" loading="lazy">
       <div class="overlay"><div class="tag">Quincho &amp; Terraza</div><h3>TERRAZA <span class="accent">La Reina</span></h3><div class="location">La Reina</div></div>
     </div>
-    <div class="portfolio-item" data-category="remodelacion" data-title="COCINA CALLAO" data-tag="Remodelación" data-location="Providencia" data-img="img/Cocina Callao.png">
-      <img src="img/Cocina Callao.png" alt="Cocina Callao">
+    <div class="portfolio-item" tabindex="0" role="button" data-category="remodelacion" data-title="COCINA CALLAO" data-tag="Remodelación" data-location="Providencia" data-img="img/Cocina Callao.png">
+      <img src="img/Cocina Callao.png" alt="Cocina Callao" loading="lazy">
       <div class="overlay"><div class="tag">Remodelación</div><h3>COCINA <span class="accent">Callao</span></h3><div class="location">Providencia</div></div>
     </div>
-    <div class="portfolio-item" data-category="remodelacion" data-title="CASA NILHUE" data-tag="Remodelación" data-location="Nilhue" data-img="img/Remodelacion casa Nilhue.png">
-      <img src="img/Remodelacion casa Nilhue.png" alt="Casa Nilhue">
+    <div class="portfolio-item" tabindex="0" role="button" data-category="remodelacion" data-title="CASA NILHUE" data-tag="Remodelación" data-location="Nilhue" data-img="img/Remodelacion casa Nilhue.png">
+      <img src="img/Remodelacion casa Nilhue.png" alt="Casa Nilhue" loading="lazy">
       <div class="overlay"><div class="tag">Remodelación</div><h3>CASA <span class="accent">Nilhue</span></h3><div class="location">Nilhue</div></div>
     </div>
-    <div class="portfolio-item" data-category="quincho" data-title="QUINCHO SAN RAMÓN" data-tag="Quincho & Terraza" data-location="San Ramón" data-img="img/Quincho San Ramón.png">
-      <img src="img/Quincho San Ramón.png" alt="Quincho San Ramón">
+    <div class="portfolio-item" tabindex="0" role="button" data-category="quincho" data-title="QUINCHO SAN RAMÓN" data-tag="Quincho & Terraza" data-location="San Ramón" data-img="img/Quincho San Ramón.png">
+      <img src="img/Quincho San Ramón.png" alt="Quincho San Ramón" loading="lazy">
       <div class="overlay"><div class="tag">Quincho &amp; Terraza</div><h3>QUINCHO <span class="accent">San Ramón</span></h3><div class="location">San Ramón</div></div>
     </div>
-    <div class="portfolio-item" data-category="quincho" data-title="QUINCHO LOMAS DE LA DEHESA" data-tag="Quincho & Terraza" data-location="Lo Barnechea" data-img="img/Quincho Lomas de la Dehesa.jpg">
-      <img src="img/Quincho Lomas de la Dehesa.jpg" alt="Quincho Lomas de la Dehesa">
+    <div class="portfolio-item" tabindex="0" role="button" data-category="quincho" data-title="QUINCHO LOMAS DE LA DEHESA" data-tag="Quincho & Terraza" data-location="Lo Barnechea" data-img="img/Quincho Lomas de la Dehesa.jpg">
+      <img src="img/Quincho Lomas de la Dehesa.jpg" alt="Quincho Lomas de la Dehesa" loading="lazy">
       <div class="overlay"><div class="tag">Quincho &amp; Terraza</div><h3>QUINCHO <span class="accent">Lomas de la Dehesa</span></h3><div class="location">Lo Barnechea</div></div>
     </div>
   </div>
 </section>
 
 <!-- LIGHTBOX -->
-<div class="lightbox" id="lightbox">
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Imagen del proyecto">
   <div class="lightbox-content">
     <div class="lightbox-close" id="lightboxClose">✕ CERRAR</div>
     <img id="lightboxImg" src="" alt="">
@@ -529,12 +539,12 @@
   </div>
   <div class="team-grid">
     <div class="team-card">
-      <img src="img/fotowebZ.png" alt="Juan José Zará" class="team-photo">
+      <img src="img/fotowebZ.png" alt="Juan José Zará" class="team-photo" loading="lazy">
       <h3>Juan José Zará</h3>
       <div class="team-role">Arquitecto</div>
     </div>
     <div class="team-card">
-      <img src="img/fotowebK.png" alt="Cristian Kraemer" class="team-photo">
+      <img src="img/fotowebK.png" alt="Cristian Kraemer" class="team-photo" loading="lazy">
       <h3>Cristian Kraemer</h3>
       <div class="team-role">Arquitecto</div>
     </div>
@@ -547,11 +557,11 @@
   <h2>COTIZA CON<br><span class="accent">QUIENES LO</span><br>EJECUTAN.</h2>
   <form class="contact-form" action="mailto:juanjose@zkarquitectura.cl" method="post" enctype="text/plain">
     <div class="form-row">
-      <div class="form-group"><label>Nombre</label><input type="text" name="nombre" placeholder="Tu nombre" required></div>
-      <div class="form-group"><label>Teléfono</label><input type="tel" name="telefono" placeholder="+56 9 1234 5678"></div>
+      <div class="form-group"><label for="nombre">Nombre</label><input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required autocomplete="name"></div>
+      <div class="form-group"><label for="telefono">Teléfono</label><input type="tel" id="telefono" name="telefono" placeholder="+56 9 1234 5678" autocomplete="tel"></div>
     </div>
-    <div class="form-group"><label>Email</label><input type="email" name="email" placeholder="tu@email.cl" required></div>
-    <div class="form-group"><label>Mensaje</label><textarea name="mensaje" placeholder="Cuéntanos sobre tu proyecto..."></textarea></div>
+    <div class="form-group"><label for="email">Email</label><input type="email" id="email" name="email" placeholder="tu@email.cl" required autocomplete="email"></div>
+    <div class="form-group"><label for="mensaje">Mensaje</label><textarea id="mensaje" name="mensaje" placeholder="Cuéntanos sobre tu proyecto..."></textarea></div>
     <button type="submit" class="btn-submit">ENVIAR MENSAJE →</button>
   </form>
   <div class="contact-divider">— O ESCRÍBENOS DIRECTAMENTE —</div>
@@ -601,8 +611,12 @@
   // Portfolio filters
   document.querySelectorAll('.filter-btn').forEach(btn => {
     btn.addEventListener('click', () => {
-      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.filter-btn').forEach(b => {
+        b.classList.remove('active');
+        b.setAttribute('aria-pressed', 'false');
+      });
       btn.classList.add('active');
+      btn.setAttribute('aria-pressed', 'true');
       const filter = btn.dataset.filter;
       document.querySelectorAll('.portfolio-item').forEach(item => {
         if (filter === 'all' || item.dataset.category === filter) {
@@ -616,25 +630,30 @@
 
   // Lightbox
   const lightbox = document.getElementById('lightbox');
-  document.querySelectorAll('.portfolio-item').forEach(item => {
-    item.addEventListener('click', () => {
-      document.getElementById('lightboxImg').src = item.dataset.img;
-      document.getElementById('lightboxTitle').textContent = item.dataset.title;
-      document.getElementById('lightboxTag').textContent = item.dataset.tag;
-      lightbox.classList.add('open');
-      document.body.style.overflow = 'hidden';
-    });
-  });
-  document.getElementById('lightboxClose').addEventListener('click', () => {
+
+  function openLightbox(item) {
+    document.getElementById('lightboxImg').src = item.dataset.img;
+    document.getElementById('lightboxTitle').textContent = item.dataset.title;
+    document.getElementById('lightboxTag').textContent = item.dataset.tag;
+    lightbox.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    document.getElementById('lightboxClose').focus();
+  }
+
+  function closeLightbox() {
     lightbox.classList.remove('open');
     document.body.style.overflow = '';
+  }
+
+  document.querySelectorAll('.portfolio-item').forEach(item => {
+    item.addEventListener('click', () => openLightbox(item));
+    item.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openLightbox(item); }
+    });
   });
-  lightbox.addEventListener('click', (e) => {
-    if (e.target === lightbox) {
-      lightbox.classList.remove('open');
-      document.body.style.overflow = '';
-    }
-  });
+  document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
+  lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && lightbox.classList.contains('open')) closeLightbox(); });
 
   // Counter animation
   function animateCounter(el) {
