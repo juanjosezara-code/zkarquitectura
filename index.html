@@ -171,6 +171,7 @@
   transition: transform 0.5s ease;
 }
 .featured-item:hover img { transform: scale(1.05); }
+.featured-item:focus-visible { outline: 3px solid #2471C0; outline-offset: -3px; }
 .featured-item .featured-overlay {
   position: absolute;
   inset: 0;
@@ -527,7 +528,7 @@
 
 <!-- FEATURED STRIP -->
 <div class="featured-strip">
-  <div class="featured-item" data-filter-target="quincho">
+  <div class="featured-item" tabindex="0" role="button" aria-label="Ver quinchos y terrazas" data-filter-target="quincho">
     <img src="img/Quincho Lomas de la Dehesa.jpg" alt="Quincho Lomas de la Dehesa" loading="lazy">
     <div class="featured-overlay">
       <div class="feat-label">Quincho &amp; Terraza</div>
@@ -535,7 +536,7 @@
       <div class="feat-arrow">→</div>
     </div>
   </div>
-  <div class="featured-item" data-filter-target="remodelacion">
+  <div class="featured-item" tabindex="0" role="button" aria-label="Ver remodelaciones" data-filter-target="remodelacion">
     <img src="img/Cocina_Av.Kennedy.jpg" alt="Cocina Av. Kennedy" loading="lazy">
     <div class="featured-overlay">
       <div class="feat-label">Remodelación</div>
@@ -543,7 +544,7 @@
       <div class="feat-arrow">→</div>
     </div>
   </div>
-  <div class="featured-item" data-filter-target="comercial">
+  <div class="featured-item" tabindex="0" role="button" aria-label="Ver locales comerciales" data-filter-target="comercial">
     <img src="img/Restaurant texas ribs.png" alt="Restaurant Texas Ribs" loading="lazy">
     <div class="featured-overlay">
       <div class="feat-label">Local Comercial</div>
@@ -798,13 +799,17 @@
 
   // Featured strip → activa filtro en portafolio
   document.querySelectorAll('.featured-item').forEach(item => {
-    item.addEventListener('click', () => {
+    const activateFilter = () => {
       const target = item.dataset.filterTarget;
       const btn = document.querySelector(`.filter-btn[data-filter="${target}"]`);
       if (btn) {
         btn.click();
         document.getElementById('portafolio').scrollIntoView({ behavior: 'smooth' });
       }
+    };
+    item.addEventListener('click', activateFilter);
+    item.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); activateFilter(); }
     });
   });
 
